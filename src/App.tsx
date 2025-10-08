@@ -1,27 +1,18 @@
 // import { useEffect } from "react";
 import { useEffect } from "react";
+import { useTelegram } from "./components/hooks/useTelegram";
 import "./App.css";
 
-declare global {
-  interface Window {
-    Telegram: any; // или более точный тип, если он у вас есть
-  }
-}
-const tg = window.Telegram.WebApp;
+const { tg, onToggleButton }: any = useTelegram();
 
 function App() {
   useEffect(() => {
     tg.ready();
   }, []);
 
-  const onClose = () => {
-    tg.close();
-  };
-
   return (
     <div className="App">
-      App
-      <button onClick={onClose}>Close</button>
+      <button onClick={onToggleButton}>toggle</button>
     </div>
   );
 }
