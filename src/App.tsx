@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTelegram } from "./components/hooks/useTelegram";
 import "./App.css";
 
-const { tg, onToggleButton }: any = useTelegram();
+const { tg, onToggleButton } = useTelegram();
 
 function App() {
   useEffect(() => {
