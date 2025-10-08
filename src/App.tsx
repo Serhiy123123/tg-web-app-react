@@ -1,3 +1,4 @@
+// import { useEffect } from "react";
 import { useEffect } from "react";
 import "./App.css";
 
@@ -12,14 +13,15 @@ function App() {
   useEffect(() => {
     tg.ready();
   }, []);
+
   const onClose = () => {
-    tg.close;
+    tg.close();
   };
 
   return (
     <div className="App">
       App
-      <button onClick={onClose}>Закрыть</button>
+      <button onClick={onClose}>Close</button>
     </div>
   );
 }
